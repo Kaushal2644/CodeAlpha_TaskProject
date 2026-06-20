@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Font Import ─────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Base Styles ────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #0d0f14;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar Styling ──────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #13151c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2d3e;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* ── Custom Utility Classes ─────────────────────── */
+@layer components {
+
+  /* Cards */
+  .card {
+    @apply bg-dark-card border border-dark-border rounded-xl p-6;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white 
+           font-medium px-4 py-2 rounded-lg 
+           transition-all duration-200 
+           flex items-center gap-2 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-hover hover:bg-dark-border text-text-secondary 
+           font-medium px-4 py-2 rounded-lg 
+           transition-all duration-200 
+           flex items-center gap-2 cursor-pointer;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white 
+           font-medium px-4 py-2 rounded-lg 
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full bg-dark-input border border-dark-border 
+           text-text-primary placeholder-text-muted 
+           rounded-lg px-3 py-2 text-sm 
+           focus:outline-none focus:border-primary 
+           focus:ring-1 focus:ring-primary 
+           transition-all duration-200;
+  }
+
+  /* Select */
+  .select {
+    @apply w-full bg-dark-input border border-dark-border 
+           text-text-primary rounded-lg px-3 py-2 text-sm 
+           focus:outline-none focus:border-primary 
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 
+           rounded-full text-xs font-medium;
+  }
+
+  /* Status badges */
+  .badge-backlog    { @apply badge bg-slate-700    text-slate-300; }
+  .badge-todo       { @apply badge bg-blue-900     text-blue-300; }
+  .badge-inprogress { @apply badge bg-amber-900    text-amber-300; }
+  .badge-review     { @apply badge bg-purple-900   text-purple-300; }
+  .badge-done       { @apply badge bg-emerald-900  text-emerald-300; }
+
+  /* Priority badges */
+  .badge-low      { @apply badge bg-emerald-900 text-emerald-300; }
+  .badge-medium   { @apply badge bg-amber-900   text-amber-300; }
+  .badge-high     { @apply badge bg-orange-900  text-orange-300; }
+  .badge-critical { @apply badge bg-red-900     text-red-300; }
+
+  /* Sidebar nav item */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg 
+           text-text-secondary hover:text-text-primary 
+           hover:bg-dark-hover transition-all duration-200 
+           cursor-pointer text-sm font-medium;
+  }
+
+  .nav-item-active {
+    @apply nav-item bg-primary text-white hover:bg-primary-hover;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-70 
+           flex items-center justify-center z-50 p-4;
+  }
+
+  /* Modal box */
+  .modal-box {
+    @apply bg-dark-card border border-dark-border 
+           rounded-xl shadow-modal w-full max-w-lg 
+           max-h-screen overflow-y-auto;
+  }
+
+  /* Section heading */
+  .page-title {
+    @apply text-2xl font-bold text-text-primary;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-text-secondary mt-1;
+  }
+}
