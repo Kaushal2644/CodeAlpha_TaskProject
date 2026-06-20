@@ -128,15 +128,6 @@ The app runs at `http://localhost:5173`.
 
 ---
 
-## 🔑 Demo Login
-
-After seeding, log in with:
-
-```
-Email:    kautilp7@gmail.com
-Password: 123456
-```
-
 ---
 
 ## 📡 API Overview
